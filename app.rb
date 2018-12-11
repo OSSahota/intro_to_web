@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'shotgun'
 
-
+# attr_reader :name
 set :session_secret, 'super secret'
 
 get '/' do
@@ -25,6 +25,6 @@ get '/notsosecret' do
 end
 
 get '/cat' do
-	erb(:index)
+  @name = ["Amigo","Oscar","Viking"].sample
+  erb(:index)
 end
-
