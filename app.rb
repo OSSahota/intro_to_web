@@ -29,9 +29,15 @@ get '/random-cat' do
   erb(:index)
 end
 
-get '/named-cat' do
+# Part of Sinatra POSTed params challenge.
+# Adding a form-displaying route.
+get '/cat-form' do
+  # References a view, created specifically for this challenge.
+  erb(:cat_form)
+end
+
+post '/named-cat' do
   p params
   @name = params[:name]
-  # @age = params[:age]
   erb(:index)
 end
